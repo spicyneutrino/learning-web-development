@@ -22,6 +22,27 @@ body{
     background-color: rgb(247, 247, 247);
 }
 
+/* responsive media queries */
+
+@media (max-width:750px){
+    .main-section{
+        grid-template-columns: 1fr 1fr;
+    }  
+}
+
+@media (min-width:751px) and (max-width:999){
+    .main-section{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width:1000px) {
+    .main-section{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+
 
 
 /* flexbox */
