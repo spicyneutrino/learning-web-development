@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,43 @@
     <script src="script.js" defer></script>
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div class="set-size">
+        <input type="text" name="grid-size" id="grid-size">
+        <button>Set Size</button>
+    </div>
+
+    <div class="color-picker">
+        <form >
+            <label>
+                <input type="radio" name="option" value ="#8ecae6">
+                <div class="color1"></div>
+            </label>
+            <label>
+                <input type="radio" name="option" value ="#219ebc">
+                <div class="color2"></div>
+            </label>
+            <label>
+                <input type="radio" name="option" value ="#ffb703">
+                <div class="color3"></div>
+            </label>
+            <label>
+                <input type="radio" name="option" value ="#fb8500">
+                <div class="color4"></div>
+            </label>
+            <label>
+                <input type="radio" name="option" value ="random">
+                <div class="color5"><img src="rainbow-img.png" class="rainbow-img"></div>
+            </label>
+        </form>
+    </div>
+
+    <button class="color-reset">Reset</button>
+
+    <div class="main-container">
+    </div>
+
 </body>
+
 </html>
