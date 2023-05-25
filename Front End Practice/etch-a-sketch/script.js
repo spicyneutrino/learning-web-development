@@ -76,6 +76,6 @@ resetBtn.addEventListener('click',()=>{
 })
 
 let eraseBtn = document.querySelector('.erase-color');
-eraseBtn.addEventListener('mouseenter',()=>{
+eraseBtn.addEventListener('click',()=>{
     selectedColor= '#023047';
 })
