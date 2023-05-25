@@ -1,3 +1,20 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #470230;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+/* sketch area */
 .main-container {
     display: flex;
     flex-direction: column;
@@ -32,11 +49,12 @@
 
 }
 
+/* color picker */
+
 .color1 {
     background-color: #8ecae6;
     width: 25px;
     height: 25px;
-    /* padding: 5px; */
 }
 
 .color2 {
@@ -56,7 +74,13 @@
     width: 25px;
     height: 25px;
 }
+.color5 {
+    background-color: #ff0000;
+    width: 25px;
+    height: 25px;
+}
 
+/* input elements */
 form {
     display: flex;
     width: 100px;
@@ -67,4 +91,57 @@ form {
     width: 25px;
     height: 25px;
     
+}
+
+.color-picker form {
+    display: flex;
+    justify-content: center;
+}
+
+label{
+    margin: 0px 4px;
+    display: flex;
+    justify-content: center;
+}
+
+.color-picker input[type ="radio"]{
+    display: none;
+}
+
+.set-size{
+    margin:8px;
+}
+
+.set-size input{
+    width: 35px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #023047;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin: 8px;
+}
+
+.set-size #grid-size::placeholder{
+    font-size: 12px;
+}
+
+.set-size button,
+.color-reset{
+    border: 0;
+    background-color: #023047;
+    color: #8ecae6;
+    padding: 3px 5px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.color-reset{
+    background-color: #02473c;
+    color: white;
+}
+
+.active{
+    border: 2px solid #023047;
 }
