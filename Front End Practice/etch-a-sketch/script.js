@@ -40,6 +40,7 @@ function createDiv(num) {
             block = document.createElement("div");
             block.style.width = `${100 / gridSize}%`;
             block.setAttribute("class", "box")
+            block.style.transition = "background-color 0.5s";
             rowContainer.appendChild(block);
         }
         sketchArea.appendChild(rowContainer);
