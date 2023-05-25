@@ -23,8 +23,8 @@ body{
     flex-wrap: wrap;
     align-self: center;
     border: 3px dotted red;
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
 }
 
 .each-div-line {
@@ -43,10 +43,7 @@ body{
 
 .box:hover {
     border: 1px solid white;
-
-    background-color: rgb(161, 223, 62);
-    opacity: 0.5;
-
+    opacity: 0.8;
 }
 
 /* color picker */
@@ -108,6 +105,10 @@ label{
     display: none;
 }
 
+.color-picker form label:hover{
+    background-color: white;
+}
+
 .set-size{
     margin:8px;
 }
@@ -131,7 +132,7 @@ label{
 .color-reset{
     border: 0;
     background-color: #023047;
-    color: #8ecae6;
+    color: white;
     padding: 3px 5px;
     text-align: center;
     font-size: 15px;
@@ -140,8 +141,6 @@ label{
 .color-reset{
     background-color: #02473c;
     color: white;
-}
-
-.active{
-    border: 2px solid #023047;
+    font-size: 16px;
+    margin:8px;
 }

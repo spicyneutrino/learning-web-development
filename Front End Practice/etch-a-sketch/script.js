@@ -1,6 +1,6 @@
 let setSizeBtn = document.querySelector('.set-size button');
 let gridSize = 16;
-let selectedColor = "red";
+let selectedColor = "#8ecae6";
 
 let sketchArea = document.querySelector('.main-container');
 
