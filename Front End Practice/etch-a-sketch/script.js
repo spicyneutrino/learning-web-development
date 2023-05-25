@@ -74,8 +74,7 @@ resetBtn.addEventListener('click',()=>{
     createDiv(gridSize);
 })
 
-
-
-
-
-
+let eraseBtn = document.querySelector('.erase-color');
+eraseBtn.addEventListener('mouseenter',()=>{
+    selectedColor= '#023047';
+})

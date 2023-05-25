@@ -140,7 +140,13 @@ label{
 
 .color-reset{
     background-color: #02473c;
-    color: white;
     font-size: 16px;
     margin:8px;
+}
+
+.erase-color{
+    background-color: white;
+    color: black;
+    border:0;
+    padding: 3px 5px;
 }
