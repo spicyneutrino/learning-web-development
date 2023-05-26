@@ -17,7 +17,8 @@ let equalBtn = document.querySelector(".equal-button");
 //top and botttom area of display
 let prevCalc = 0;
 let currentCalc = 0;
-let operator="";
+let operator = "";
+let previousOperator = "=";
 
 //events
 
@@ -29,15 +30,24 @@ numbers.forEach((btn) => {
 operators.forEach((btn) => {
     btn.addEventListener('click', () => {
         operator = btn.textContent;
-        prevCalculationArea.textContent = currentCalculationArea.textContent + operator;
-        prevCalc = +currentCalculationArea.textContent;
-        currentCalculationArea.textContent = "";
+        if (previousOperator != '=') {
+            currentCalc = +currentCalculationArea.textContent;
+            currentCalculationArea.textContent = "";
+            prevCalc = +operate(prevCalc, previousOperator, currentCalc)
+            prevCalculationArea.textContent = prevCalc + operator;
+        } else {
+            prevCalculationArea.textContent = currentCalculationArea.textContent + operator;
+            prevCalc = +currentCalculationArea.textContent;
+            currentCalculationArea.textContent = "";
+        }
+        previousOperator = operator;
+
     })
 })
 
 clearBtn.addEventListener('click', clearScreen);
-deleteBtn.addEventListener('click',deleteScreen);
-equalBtn.addEventListener('click',operateAndUpdate);
+deleteBtn.addEventListener('click', deleteScreen);
+equalBtn.addEventListener('click', operateAndUpdate);
 
 
 
@@ -56,6 +66,10 @@ function operate(num1, operator, num2) {
 function clearScreen() {
     prevCalculationArea.textContent = "";
     currentCalculationArea.textContent = "";
+    prevCalc = 0;
+    currentCalc = 0;
+    operator = "";
+    previousOperator = "=";
 }
 
 function deleteScreen() {
@@ -63,16 +77,17 @@ function deleteScreen() {
     currentCalc = currentCalculationArea.textContent;
 }
 
-function updateCurrentCalc(text){
+function updateCurrentCalc(text) {
     currentCalculationArea.textContent = text;
 }
-function updatePrevCalc(text){
+function updatePrevCalc(text) {
     prevCalculationArea.textContent = text;
 }
 
-function operateAndUpdate(){
+function operateAndUpdate() {
     currentCalc = +currentCalculationArea.textContent;
     // currentCalc = operate(prevCalc,operator,currentCalc);
-    prevCalculationArea.textContent+= currentCalc + "=";
-    currentCalculationArea.textContent = operate(prevCalc,operator,currentCalc);
+    prevCalculationArea.textContent += currentCalc + "=";
+    currentCalculationArea.textContent = operate(prevCalc, operator, currentCalc);
+    previousOperator = "=";
 }
