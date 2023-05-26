@@ -97,7 +97,11 @@ function updatePrevCalc(text) {
 function operateAndUpdate() {
     currentCalc = +currentCalculationArea.textContent;
     // currentCalc = operate(prevCalc,operator,currentCalc);
-    prevCalculationArea.textContent += currentCalc + "=";
+    if (previousOperator=='='){
+        prevCalculationArea.textContent = currentCalc;
+    } else {
+        prevCalculationArea.textContent += currentCalc + "=";
+    }
     currentCalculationArea.textContent = operate(prevCalc, operator, currentCalc);
     previousOperator = "=";
 }
