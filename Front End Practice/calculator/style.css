@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    /* border: 2px dotted red; */
+}
+
+body {
+    background-color: #e5e5e5;
+    min-height: 100vh;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator-container {
+    width: 400px;
+    height: auto;
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    align-items: center;
+    background-color: #e5e5e5;
+    box-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        -2px -2px 4px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+}
+
+/* calculator screen */
+
+.calculator-screen {
+    width: 90%;
+    height: 125px;
+    /* border: 1px solid black; */
+    margin: 50px 0px;
+    border-radius: 5px;
+    background-color: #1d3557;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.calculator-screen:hover{
+    opacity: 0.95;
+}
+
+.calculator-screen .previous-calculation {
+    height: 40%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.7rem;
+    align-items: center;
+    filter: brightness(80%);
+}
+
+.calculator-screen .current-calculation {
+    height: 60%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1rem;
+    align-items: center;
+}
+
+/* clear delete buttons */
+.clear-delete {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin-bottom: 5px;
+}
+
+.clear-delete>button {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.clear-delete .clear {
+    background-color: #e63946;
+}
+
+.clear-delete .delete {
+    background-color: #457b9d;
+    margin-left: 5px;
+}
+
+
+/* numberpad */
+.calculator-numpad {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 5px;
+    height: 300px;
+    width: 90%;
+    margin-bottom: 15px;
+
+}
+
+.calculator-numpad>button {
+
+    height: 100%;
+    border-radius: 5px;
+    background-color: #f1faee;
+    text-align: center;
+}
+
+button.operator {
+    background-color: lightblue;
+}
+
+button.equal-button {
+    background-color: #457b9d;
+    color: white;
+}
+
+button {
+    transition: all 0.1s;
+    border: none;
+    filter: brightness(100%);
+}
+
+button:hover {
+    filter: brightness(80%);
+}
