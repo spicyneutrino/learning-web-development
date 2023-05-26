@@ -27,6 +27,12 @@ numbers.forEach((btn) => {
         currentCalculationArea.textContent += btn.textContent;
     })
 })
+
+dotBtn.addEventListener('click',()=>{
+    if (!currentCalculationArea.textContent.includes('.')){
+        currentCalculationArea.textContent += ".";
+    }
+})
 operators.forEach((btn) => {
     btn.addEventListener('click', () => {
         operator = btn.textContent;
@@ -60,6 +66,10 @@ function operate(num1, operator, num2) {
         case "*":
             return +num1 * +num2;
         case "÷":
+            if (num2==0){
+                alert('Can not divide by zero ¯\\_(ツ)_/¯');
+                return 0;
+            }
             return +num1 / +num2;
     }
 }
