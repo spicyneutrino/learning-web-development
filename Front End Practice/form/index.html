@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,76 @@
     <link rel="stylesheet" href="style.css">
     <title>My Website</title>
 </head>
+
 <body>
-    
+    <aside>
+
+        <div class="odin-logo">
+            <img src="images/odin-lined.png" alt="" srcset="">
+        </div>
+        <img src="images/artur-stanulevich-E5FP8airqrM-unsplash.jpg" alt="Background" class="background">
+
+
+    </aside>
+    <main>
+        <div class="top-section">
+            <p class="notice">
+                This is not a real online service! You know you need something like this in your life to help you
+                realize
+                your deepest dreams.<br>
+                Sign up <em>now</em> to get started.
+            </p>
+            <p>
+                You <em>know</em> you want to.
+            </p>
+        </div>
+
+        <div class="form-section">
+            <div class="form-input">
+                <p>Let's do this!</p>
+                <form action="post">
+                    <div class="form-row">
+                        <div>
+                            <label for="first_name">First Name</label>
+                            <input type="text" name="first_name" id="first_name">
+                        </div>
+                        <div>
+                            <label for="last_name">Last Name</label>
+                            <input type="text" name="last_name" id="last_name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="email">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email">
+
+                        </div>
+                        <div class="phoneNumber">
+                            <label for="">Phone Number</label>
+                            <input type="text" name="phone_number" id="phoneNumber" inputmode="numeric">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="password">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password">
+                        </div>
+                        <div class="confirm-password">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" name="confirm_password" id="confirm-password">
+                        </div>
+                    </div>
+            </div>
+
+            <div class="bottom-part">
+                <button class="create-account" type="submit">Create Account</button>
+                </form>
+                <p>
+                    Already have an account? <a href="#">Log in</a>
+                </p>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>
