@@ -11,14 +11,18 @@
 
 <body>
     <aside>
-
         <div class="odin-logo">
             <img src="images/odin-lined.png" alt="" srcset="">
         </div>
         <img src="images/artur-stanulevich-E5FP8airqrM-unsplash.jpg" alt="Background" class="background">
-
-
+        <p>Photo by
+            <a
+                href="https://unsplash.com/@artstanulevich?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Artur
+                Stanulevich</a> on <a
+                href="https://unsplash.com/photos/E5FP8airqrM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        </p>
     </aside>
+
     <main>
         <div class="top-section">
             <p class="notice">
@@ -35,7 +39,7 @@
         <div class="form-section">
             <div class="form-input">
                 <p>Let's do this!</p>
-                <form action="post">
+                <form>
                     <div class="form-row">
                         <div>
                             <label for="first_name">First Name</label>
@@ -48,23 +52,24 @@
                     </div>
                     <div class="form-row">
                         <div class="email">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email">
+                            <label for="email">Email <span class="asterik">*</span>
+                            </label>
+                            <input type="email" name="email" id="email" required>
 
                         </div>
                         <div class="phoneNumber">
-                            <label for="">Phone Number</label>
-                            <input type="text" name="phone_number" id="phoneNumber" inputmode="numeric">
+                            <label for="phone_number">Phone Number</label>
+                            <input type="text" name="phone_number" id="phone_number" inputmode="numeric">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="password">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" id="password">
+                            <label for="password">Password <span class="asterik">*</span></label>
+                            <input type="password" name="password" id="password" required minlength="8" maxlength="14"">
                         </div>
                         <div class="confirm-password">
-                            <label for="confirm-password">Confirm Password</label>
-                            <input type="password" name="confirm_password" id="confirm-password">
+                            <label for="confirm-password">Confirm Password <span class="asterik">*</span></label>
+                            <input type="password" name="confirm_password" id="confirm-password" required>
                         </div>
                     </div>
             </div>

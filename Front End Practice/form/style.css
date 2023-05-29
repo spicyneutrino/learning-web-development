@@ -40,6 +40,17 @@ div.odin-logo img{
 
 }
 
+aside p,a{
+    font-size: 12px;
+    text-decoration: none;
+    color: #eaeae9;
+}
+
+aside p{
+    position: absolute;
+    bottom: 0;
+}
+
 /* right section */
 
 main {
@@ -109,7 +120,19 @@ input {
     top: 0;
     left: 0;
     text-transform: uppercase;
+}
 
+.form-row label span {
+    font-size: 13px;
+    color: rgb(178, 37, 37);
+}
+
+input:invalid{
+    border: 1.5px solid red;
+}
+
+input:valid{
+    border: 2px solid var(--theme-color);
 }
 
 /* bottom part */
@@ -132,4 +155,5 @@ button.create-account {
     color: var(--theme-color);
     text-decoration: none;
     font-weight: 600;
+    font-size: 1em;
 }
