@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    background-color: #a8dadc;
+}
+
+.book-collection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.book {
+    height: 300px;
+    width: 230px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-color: #457b9d;
+    color: #f1faee;
+    padding: 10px;
+    border-radius: 3px;
+    flex: 1 1 1;
+    margin: 8px 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+button.open-form {
+    border: none;
+    background-color: #ccd5ae;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+button {
+    font-size: 18px;
+    background-color: none;
+    width: 40%;
+    border: none;
+    border-radius: 3px;
+}
+
+.book-collection button+button {
+    background-color: #606c38;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px;
+    text-align: center;
+    width: 50%;
+}
+
+form {
+    position: fixed;
+    z-index: 10;
+    height: 500px;
+    width: 400px;
+    display: none;
+    flex-direction: column;
+    top: 1vmax;
+    right: 10vmax;
+    bottom: 1px;
+    background-color: #e9edc9;
+}
+
+form input {
+    width: 300px;
+}
+
+.form-close {
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #9e2a2b;
+    border-radius: 12.5px;
+    text-align: center;
+}
+
+div.dim-background-layer {
+    z-index: 3;
+    position: fixed;
+    background-color: rgb(64, 64, 64, 0.9);
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    right:0;
+}

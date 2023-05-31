@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Library</title>
 </head>
+
 <body>
-    
+    <header>
+
+    </header>
+    <main>
+        <div class="book-collection"></div>
+        <form>
+            <label for="book-title">Title</label>
+            <input type="text" name="book_title" id="book-title">
+            <label for="book-author">Author</label>
+            <input type="text" name="book_author" id="book-author">
+            <label for="book-pages">Pages</label>
+            <input type="text" name="book_pages" id="book-pages">
+            <label class="switch"><div>Read the book</div>
+                <input type="checkbox" name="toggle" id="toggle-switch">
+                <span class="slider"></span>
+            </label>
+
+            <button type="button" class="add-book">Add Book</button>
+            <button type="button" class="form-close">X</button>
+        </form>
+        <button class="open-form">+</button>
+        <div class="dim-background-layer"></div>
+    </main>
+
+
 </body>
+
 </html>
