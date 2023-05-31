@@ -23,9 +23,9 @@ aside img.background {
     object-position: center;
 }
 
-div.odin-logo{
+div.odin-logo {
     position: absolute;
-    background-color: rgb(65, 71, 55,0.2);
+    background-color: rgb(65, 71, 55, 0.2);
     width: 100%;
     height: 15vh;
     top: 15vh;
@@ -34,19 +34,20 @@ div.odin-logo{
     align-items: center;
 }
 
-div.odin-logo img{
+div.odin-logo img {
     position: absolute;
     height: 80%;
 
 }
 
-aside p,a{
+aside p,
+a {
     font-size: 12px;
     text-decoration: none;
     color: #eaeae9;
 }
 
-aside p{
+aside p {
     position: absolute;
     bottom: 0;
 }
@@ -127,11 +128,15 @@ input {
     color: rgb(178, 37, 37);
 }
 
-input:invalid{
+input:invalid {
     border: 1.5px solid red;
 }
 
-input:valid{
+input:invalid:required {
+    background-color: rgb(178, 37, 37, 0.1);
+}
+
+input:valid {
     border: 2px solid var(--theme-color);
 }
 
@@ -139,7 +144,7 @@ input:valid{
 
 .bottom-part {
     padding-left: 40px;
-    padding-top: 30px;    
+    padding-top: 30px;
 }
 
 button.create-account {
@@ -151,7 +156,7 @@ button.create-account {
     margin-bottom: 15px;
 }
 
-.bottom-part a{
+.bottom-part a {
     color: var(--theme-color);
     text-decoration: none;
     font-weight: 600;
