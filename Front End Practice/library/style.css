@@ -5,10 +5,11 @@
     margin: 0;
     padding: 0;
     font-family: 'Rubik', sans-serif;
+    border: none;
 }
 
 body {
-    background-color: #a8dadc;
+    background-color: #f1faee;
 }
 
 .book-collection {
@@ -20,14 +21,16 @@ body {
 .book {
     height: 300px;
     width: 230px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    box-shadow: 2px 1px 10px 1px rgba(79, 79, 79, 0.4);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    background-color: #457b9d;
-    color: #f1faee;
+    /* background-color: #457b9d; */
+    background-image: linear-gradient(to bottom right, #0077b6, #0096c7);
+    color: #fff;
     padding: 10px;
     border-radius: 3px;
     flex: 1 1 1;
@@ -74,29 +77,46 @@ button {
 form {
     position: fixed;
     z-index: 10;
-    height: 500px;
+    height: 350px;
     width: 400px;
     display: none;
     flex-direction: column;
-    top: 1vmax;
-    right: 10vmax;
+    align-items: start;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     bottom: 1px;
-    background-color: #e9edc9;
+    background-color: #a8dadc;
+    padding: 10px;
+    border-radius: 2px;
 }
 
-form input {
-    width: 300px;
+form input[type="text"] {
+    width: 80%;
+    height: 30px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    margin-top: 1px;
+    border: none;
+    border-radius: 3px;
+    padding:3px;
+}
+
+form label{
+    color: #457b9d;
+    text-transform: uppercase ;
+    font: 14px sans-serif;
 }
 
 .form-close {
     position: absolute;
-    right: -8px;
-    top: -8px;
+    right: -13px;
+    top: -13px;
     width: 25px;
     height: 25px;
     font-size: 20px;
     font-weight: 600;
-    background-color: #9e2a2b;
+    background-color: #d00000;
     border-radius: 12.5px;
     text-align: center;
 }
@@ -104,9 +124,21 @@ form input {
 div.dim-background-layer {
     z-index: 3;
     position: fixed;
-    background-color: rgb(64, 64, 64, 0.9);
+    background-color: rgba(36, 36, 36, 0.94);
     width: 100vw;
     height: 100vh;
     top:0;
     right:0;
+}
+
+input#toggle-switch{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 15px;
+}
+
+button.add-book{
+    width:50%;
+    height:50px;
+    font-weight: 500;
 }
