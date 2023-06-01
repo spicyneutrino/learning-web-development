@@ -82,7 +82,8 @@ function closeForm() {
     document.getElementById('book-title').value = '';
     document.getElementById('book-author').value = '';
     document.getElementById('book-pages').value = '';
-    document.getElementById('toggle-switch').textContent = 'Not Read';
+    document.getElementById('toggle-switch').checked = false;
+    document.querySelector(".error-message").textContent="";
 }
 
 function openForm() {
@@ -99,6 +100,14 @@ function addBook() {
     let author = document.getElementById('book-author').value;
     let pages = document.getElementById('book-pages').value;
     let readStatus = document.getElementById('toggle-switch').checked;
+
+    let errorMessageBox = document.querySelector(".error-message");
+
+    if (title === "0" || author === "0" || pages.length == "0") {
+        errorMessageBox.textContent = "Please fill all the information."
+        return;
+    }
+    
     addBookToLibrary(new Book(title, author, pages, readStatus));
     closeForm();
 }

@@ -142,3 +142,8 @@ button.add-book{
     height:50px;
     font-weight: 500;
 }
+
+div.error-message{
+    margin-top: 15px;
+    color: #c1121f;
+}
