@@ -71,7 +71,6 @@ showAll(myLibrary);
 
 //form inputs
 
-
 function closeForm() {
     let form = document.querySelector("form");
     form.style.display = "none";
@@ -84,9 +83,8 @@ function closeForm() {
     document.getElementById('book-author').value = '';
     document.getElementById('book-pages').value = '';
     document.getElementById('toggle-switch').textContent = 'Not Read';
-
-    
 }
+
 function openForm() {
     let form = document.querySelector("form");
     form.style.display = "flex";
@@ -100,8 +98,8 @@ function addBook() {
     let title = document.getElementById('book-title').value;
     let author = document.getElementById('book-author').value;
     let pages = document.getElementById('book-pages').value;
-    let readStatus = document.getElementById('toggle-switch').textContent;
-    addBookToLibrary(new Book(title, author, pages, true));
+    let readStatus = document.getElementById('toggle-switch').checked;
+    addBookToLibrary(new Book(title, author, pages, readStatus));
     closeForm();
 }
 
