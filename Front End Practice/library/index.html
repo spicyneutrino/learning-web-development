@@ -18,21 +18,19 @@
         <div class="book-collection"></div>
         <form>
             <label for="book-title">Title</label>
-            <input type="text" name="book_title" id="book-title">
+            <input type="text" name="book_title" id="book-title" minlength="3" required>
             <label for="book-author">Author</label>
-            <input type="text" name="book_author" id="book-author">
+            <input type="text" name="book_author" id="book-author" required>
             <label for="book-pages">Pages</label>
-            <input type="text" name="book_pages" id="book-pages">
-            <label class="switch"><div>Read the book</div>
-                <input type="checkbox" name="toggle" id="toggle-switch">
-                <span class="slider"></span>
-            </label>
+            <input type="text" name="book_pages" id="book-pages" min="30" required>
+            <label class="switch" for="toggle-switch">Read the book</label>
+            <input type="checkbox" name="toggle" id="toggle-switch" required>
 
-            <button type="button" class="add-book">Add Book</button>
+            <button class="add-book">Add Book</button>
             <button type="button" class="form-close">X</button>
         </form>
         <button class="open-form">+</button>
-        <div class="dim-background-layer"></div>
+        <div class="bg-layer"></div>
     </main>
 
 
