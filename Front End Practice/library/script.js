@@ -4,11 +4,6 @@ const myLibrary = [
     new Book('To Kill a Mockingbird', 'Harper Lee', 281, false),
     new Book('Pride and Prejudice', 'Jane Austen', 432, true),
     new Book('1984', 'George Orwell', 328, true),
-    new Book('The Catcher in the Rye', 'J.D. Salinger', 277, false),
-    new Book('The Great Gatsby', 'F. Scott Fitzgerald', 218, true),
-    new Book('To Kill a Mockingbird', 'Harper Lee', 281, false),
-    new Book('Pride and Prejudice', 'Jane Austen', 432, true),
-    new Book('1984', 'George Orwell', 328, true),
     new Book('The Catcher in the Rye', 'J.D. Salinger', 277, false)
 ];
 //book constructor
@@ -81,19 +76,23 @@ function closeForm() {
     let form = document.querySelector("form");
     form.style.display = "none";
 
-    let bgDarkLayer = document.querySelector('.dim-background-layer');
+    let bgDarkLayer = document.querySelector('.bg-layer');
+    bgDarkLayer.classList.add('dim-background-layer');
     bgDarkLayer.style.display = "none";
 
     document.getElementById('book-title').value = '';
     document.getElementById('book-author').value = '';
     document.getElementById('book-pages').value = '';
     document.getElementById('toggle-switch').textContent = 'Not Read';
+
+    
 }
 function openForm() {
     let form = document.querySelector("form");
     form.style.display = "flex";
 
-    let bgDarkLayer = document.querySelector('.dim-background-layer');
+    let bgDarkLayer = document.querySelector('.bg-layer');
+    bgDarkLayer.classList.add('dim-background-layer');
     bgDarkLayer.style.display = "block";
 }
 
