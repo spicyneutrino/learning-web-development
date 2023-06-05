@@ -5,6 +5,7 @@ let gameboard = [
 ]
 
 function player(marker) {
+    let getMarker = () => {return marker };
 
     let addMarker = (tile) => {
         if (tile.textContent.length === 1) {
@@ -15,7 +16,7 @@ function player(marker) {
         updateGameBoard(tile, marker);
     }
 
-    return { addMarker };
+    return { getMarker, addMarker };
 }
 
 let tiles = document.querySelectorAll(".tile");
@@ -77,10 +78,22 @@ function checkGame(gameboard) {
 
 
         if (((gameboard[i][0] === gameboard[i][1]) && (gameboard[i][0] === gameboard[i][2])) && gameboard[i][0] !== "") {
+            if (player1.getMarker() === gameboard[i][0]) {
+                console.log("PLAYER 1")
+            }
+            if (player2.getMarker() === gameboard[i][0]) {
+                console.log("PLAYER 2")
+            }
             console.log("row")
 
         }
         if (((gameboard[0][i] === gameboard[1][i]) && (gameboard[0][i] === gameboard[2][i])) && gameboard[0][i] !== "") {
+            if (player1.getMarker() === gameboard[0][i]) {
+                console.log("PLAYER 1")
+            }
+            if (player2.getMarker() === gameboard[0][i]) {
+                console.log("PLAYER 2")
+            }
             console.log("col")
 
         }
@@ -90,6 +103,12 @@ function checkGame(gameboard) {
         let checkMainDiagonal = (gameboard[0][0] === gameboard[1][1]) && (gameboard[1][1] === gameboard[2][2]);
         let checkNonDiagonal = (gameboard[0][2] === gameboard[1][1]) && (gameboard[1][1] === gameboard[2][0]);
         if (checkMainDiagonal || checkNonDiagonal) {
+            if (player1.getMarker() === gameboard[1][1]) {
+                console.log("PLAYER 1")
+            }
+            if (player2.getMarker() === gameboard[1][1]) {
+                console.log("PLAYER 2")
+            }
             console.log(3);
         }
     }
