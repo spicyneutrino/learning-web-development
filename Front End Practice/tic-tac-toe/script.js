@@ -1,7 +1,7 @@
 let gameboard = [
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0]
+    ["", "", ""],
+    ["", "", ""],
+    ["", "", ""]
 ]
 
 function player(marker) {
@@ -33,6 +33,7 @@ tiles.forEach(tile => {
         }
         firstUser = !firstUser;
         console.log(gameboard);
+        checkGame(gameboard);
     })
 
 })
@@ -56,7 +57,7 @@ function updateGameBoard(tile, marker) {
         boardCol = tileIndex;
     } else if (tileIndex < 6) {
         boardRow = 1;
-        boardCol = tileIndex -3;
+        boardCol = tileIndex - 3;
         // -3 for  each row
 
     } else {
@@ -68,16 +69,31 @@ function updateGameBoard(tile, marker) {
 
 };
 
-function checkGame() {
-    let checkRow = ((gameboard[0][0] === gameboard[0][1]) === gameboard[0][2]) || ((gameboard[1][0] === gameboard[1][1]) === gameboard[1][2]) || ((gameboard[2][0] === gameboard[2][1]) === gameboard[2][2]);
-    let checkCol = ((gameboard[0][0] === gameboard[1][0]) === gameboard[2][0]) || ((gameboard[0][1] === gameboard[1][1]) === gameboard[2][1]) || ((gameboard[0][2] === gameboard[1][2]) === gameboard[2][2]);
-    let checkDiagonal = (gameboard[0][0] === gameboard[1][1]) === gameboard[2][2];
+function checkGame(gameboard) {
+    // i-> row
+    // j-> col
+    for (let i = 0; i < 3; i++) {
+        let j = 0;
 
-    if (checkRow || checkCol) {
-        console.log("GAME");
+
+        if (((gameboard[i][0] === gameboard[i][1]) && (gameboard[i][0] === gameboard[i][2])) && gameboard[i][0] !== "") {
+            console.log("row")
+
+        }
+        if (((gameboard[0][i] === gameboard[1][i]) && (gameboard[0][i] === gameboard[2][i])) && gameboard[0][i] !== "") {
+            console.log("col")
+
+        }
+
     }
-    if (checkDiagonal) {
-        console.log("DIAGONAL GAME");
+    if (gameboard[1][1] !== "") {
+        let checkMainDiagonal = (gameboard[0][0] === gameboard[1][1]) && (gameboard[1][1] === gameboard[2][2]);
+        let checkNonDiagonal = (gameboard[0][2] === gameboard[1][1]) && (gameboard[1][1] === gameboard[2][0]);
+        if (checkMainDiagonal || checkNonDiagonal) {
+            console.log(3);
+        }
     }
 }
+
+checkGame(gameboard);
 
