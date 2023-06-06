@@ -193,15 +193,20 @@ gameResetBtn.addEventListener("click", gameReset);
 let gameContinue = false;
 function game() {
     let firstUser = true;
+    player1ScoreArea.style.textDecoration= "underline";
     tiles.forEach(tile => {
         tile.addEventListener("click", () => {
             if (firstUser) {
                 player1.addMarker(tile);
+                player1ScoreArea.style.textDecoration= "none";
+                player2ScoreArea.style.textDecoration= "underline";
             } else {
                 player2.addMarker(tile);
+                player2ScoreArea.style.textDecoration= "none";
+                player1ScoreArea.style.textDecoration= "underline";
             }
             firstUser = !firstUser;
-            checkGame(gameboard);
+            checkGame(gameboard);           
         })
     })
 }
