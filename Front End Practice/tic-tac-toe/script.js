@@ -61,31 +61,25 @@ function checkGame(gameboard) {
         //checking rows
         if (((gameboard[i][0] === gameboard[i][1]) && (gameboard[i][0] === gameboard[i][2])) && gameboard[i][0] !== "") {
             if (player1.getMarker() === gameboard[i][0]) {
-                player1.numOfWins++;
                 gameWin = true;
                 winner = player1;
             }
             if (player2.getMarker() === gameboard[i][0]) {
-                player2.numOfWins++;
                 gameWin = true;
                 winner = player2;
             }
-            console.log("row")
         }
 
         //checking columns
         if (((gameboard[0][i] === gameboard[1][i]) && (gameboard[0][i] === gameboard[2][i])) && gameboard[0][i] !== "") {
             if (player1.getMarker() === gameboard[0][i]) {
-                player1.numOfWins++;
                 winner = player1;
                 gameWin = true;
             }
             if (player2.getMarker() === gameboard[0][i]) {
-                player2.numOfWins++;
                 winner = player2;
                 gameWin = true;
             }
-            console.log("col")
         }
     }
 
@@ -95,12 +89,10 @@ function checkGame(gameboard) {
         let checkNonDiagonal = (gameboard[0][2] === gameboard[1][1]) && (gameboard[1][1] === gameboard[2][0]);
         if (checkMainDiagonal || checkNonDiagonal) {
             if (player1.getMarker() === gameboard[1][1]) {
-                player1.numOfWins++;
                 winner = player1;
                 gameWin = true;
             }
             if (player2.getMarker() === gameboard[1][1]) {
-                player2.numOfWins++;
                 winner = player2;
                 gameWin = true;
             }
@@ -109,31 +101,38 @@ function checkGame(gameboard) {
     }
 
     if (gameWin) {
-        playAgainBtn.style.display = "block";
-        gameResetBtn.style.display = "block";
-
         if (winner === player1) {
             player1ScoreArea.classList.add("winner");
             player2ScoreArea.classList.add("loser");
+            player1.numOfWins += 1;
         }
         if (winner === player2) {
             player2ScoreArea.classList.add("winner");
             player1ScoreArea.classList.add("loser");
+            player2.numOfWins += 1;
         }
+        player1ScoreArea.textContent = player1.numOfWins;
+        player2ScoreArea.textContent = player2.numOfWins;
+
+        playAgainBtn.style.display = "block";
+        gameResetBtn.style.display = "block";
+    }
+    // check if its a draw
+    let boardFilled = true;
+    gameboard.forEach(row => {
+        row.forEach(box => {
+            if (box === "") {
+                boardFilled = false;
+            }
+        })
+    })
+    if (boardFilled && !gameWin) {
+        playAgainBtn.style.display = "block";
+        gameResetBtn.style.display = "block";
+        player1ScoreArea.classList.add("draw");
+        player2ScoreArea.classList.add("draw");
     }
 }
-
-let tiles = document.querySelectorAll(".tile");
-
-let player1 = player("X");
-let player2 = player("O");
-let player1ScoreArea = document.getElementById("player1-score");
-let player2ScoreArea = document.getElementById("player2-score");;
-
-let playAgainBtn = document.querySelector(".again");
-let gameResetBtn = document.querySelector(".reset")
-
-gameResetBtn.addEventListener("click", gameReset);
 
 function gameReset() {
     tiles.forEach(tile => {
@@ -149,18 +148,49 @@ function gameReset() {
     player1ScoreArea.textContent = 0;
     player2ScoreArea.textContent = 0;
     playAgainBtn.style.display = "none";
-    gameResetBtn.style.display = "none"
+    gameResetBtn.style.display = "none";
     player1ScoreArea.classList.remove("loser");
     player2ScoreArea.classList.remove("winner");
     player1ScoreArea.classList.remove("winner");
     player2ScoreArea.classList.remove("loser");
+    player1ScoreArea.classList.remove("draw");
+    player2ScoreArea.classList.remove("draw");
     game();
 }
 
+function playAgain() {
+    tiles.forEach(tile => {
+        tile.textContent = "";
+    })
+    gameboard = [
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""]
+    ];
+    playAgainBtn.style.display = "none";
+    gameResetBtn.style.display = "none";
+    player1ScoreArea.classList.remove("winner");
+    player1ScoreArea.classList.remove("loser");
+    player2ScoreArea.classList.remove("winner");
+    player2ScoreArea.classList.remove("loser");
+    player1ScoreArea.classList.remove("draw");
+    player2ScoreArea.classList.remove("draw");
+}
+
+let tiles = document.querySelectorAll(".tile");
+
+let player1 = player("X");
+let player2 = player("O");
+let player1ScoreArea = document.getElementById("player1-score");
+let player2ScoreArea = document.getElementById("player2-score");;
+
+let playAgainBtn = document.querySelector(".again");
+let gameResetBtn = document.querySelector(".reset")
+
+playAgainBtn.addEventListener("click", playAgain);
+gameResetBtn.addEventListener("click", gameReset);
+
 let gameContinue = false;
-
-
-gameContinue = false;
 function game() {
     let firstUser = true;
     tiles.forEach(tile => {
@@ -171,7 +201,6 @@ function game() {
                 player2.addMarker(tile);
             }
             firstUser = !firstUser;
-            console.log(gameboard);
             checkGame(gameboard);
         })
     })

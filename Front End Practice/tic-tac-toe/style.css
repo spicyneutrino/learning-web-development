@@ -44,6 +44,10 @@ main {
     text-shadow: 1px 1px 100px red;
 }
 
+.draw{
+    text-shadow: 1px 1px 100px yellow;
+}
+
 button{
     padding: 10px 20px;
     font-size: 20px;
