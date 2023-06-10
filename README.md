@@ -1,2 +1,2 @@
 # learning-web-development
-Things I practised while learning web develoment: HTML, CSS, Javascript
+Things I practiced while learning web development: HTML, CSS, Javascript
